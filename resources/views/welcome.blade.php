@@ -49,12 +49,8 @@
                 top: 18px;
             }
 
-            .content {
-                text-align: center;
-            }
-
             .title {
-                font-size: 84px;
+                font-size: 5.5em;
             }
 
             .links > a {
@@ -70,19 +66,17 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-
-            
         </style>
     </head>
 
     <body>
-        <div class="content container text-center">
+        <div class="container text-center">
             <div class="title m-b-md text-primary">
                 shrink.me
             </div>
             @if (!empty($error))
             <div class="alert alert-danger" role="alert">
-                <b>you need to paste correct URL!</b>
+                {{$error}}
             </div>
 
             @endif
@@ -95,11 +89,10 @@
                     </div>
                 </div>
             </form>
-          
 
             @if (isset($short_link))
-            <div class="input-group card-body w-25 p-3 container ">
-                <input type="text" value="{{$short_link}}" class="form-control-plaintext form-rounded w-25 p-3 border " />
+            <div class="input-group card-body w-25 p-3 container">
+                <input type="text" value="{{$short_link}}" class="form-control-plaintext form-rounded w-25 p-3 border" />
                 <button onclick="copyToClipboard()" class="btn btn-primary border form-rounded">
                     <svg width="2em" viewBox="0 0 16 16" class="bi bi-clipboard" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
@@ -107,7 +100,7 @@
                     </svg>
                 </button>
             </div>
-            <p class="text-primary">Visited {{$visited_counter}} times</p>
+            <p class="text-primary">visited {{$visited_counter}} times</p>
         </div>
         @endif
     </body>

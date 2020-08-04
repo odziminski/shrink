@@ -34,7 +34,7 @@ class LinksController extends Controller
              ]);        
         }
     } else {
-        return view('welcome')->with('error',true);
+        return view('welcome')->with('error',"you need to paste correct URL!");
 
     }
     }
@@ -51,7 +51,7 @@ class LinksController extends Controller
         ]);
             return redirect($query->value('original_link'));
         } else{
-            return ('error');
+            return view('welcome')->with('error',"link does not exist");
             
         }
         
