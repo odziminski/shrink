@@ -100,7 +100,7 @@
                     </svg>
                 </button>
             </div>
-            <p class="text-primary">visited {{$visited_counter}} times</p>
+            <p class="text-primary">visited {{$visited_counter ?? 0}} times</p>
         </div>
         @endif
     </body>
